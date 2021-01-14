@@ -19,6 +19,11 @@ public class Zolw extends Zwierze {
     }
 
     @Override
+    protected Zwierze rozmnazanie(int x, int y) {
+        return null;
+    }
+
+    @Override
     public boolean reakcja(Organizm przeciwnik) {
         return !(przeciwnik.getSila__() < 5); // przeciwnik nie może wejśc na to pole(blokuje ruch)
     }

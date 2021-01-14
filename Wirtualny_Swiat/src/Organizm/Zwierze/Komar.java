@@ -20,6 +20,11 @@ public class Komar extends Zwierze {
     }
 
     @Override
+    protected Zwierze rozmnazanie(int x, int y) {
+        return null;
+    }
+
+    @Override
     public void akcja() {
 
         super.akcja();

@@ -3,6 +3,7 @@ import Organizm.Organizm;
 
 abstract class Zwierze extends Organizm {
 
+    protected abstract Zwierze rozmnazanie(int x, int y);
     @Override
     public boolean reakcja(Organizm przeciwnik) {
         return true; // Zezwala na dalszy ruch
@@ -67,7 +68,12 @@ abstract class Zwierze extends Organizm {
 
     @Override
     public void kolizja(Organizm organizm) {
-        if (organizm.reakcja(this)) {
+        if (organizm.getClass() == this.getClass()){
+
+//            Zwierze noweZwierze = rozmnazanie();
+//            getSwiat__().dodaj
+        }
+        else if (organizm.reakcja(this)) {
             if (getSila__() >= organizm.getSila__()) {
                 this.setX__(organizm.getX__());
                 this.setY__(organizm.getY__());

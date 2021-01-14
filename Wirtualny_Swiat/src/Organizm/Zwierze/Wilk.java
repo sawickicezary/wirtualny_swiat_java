@@ -13,6 +13,11 @@ public class Wilk extends Zwierze {
     }
 
     @Override
+    protected Zwierze rozmnazanie(int x, int y) {
+        return null;
+    }
+
+    @Override
     public void rysowanie() {
         System.out.print('@');
     }
