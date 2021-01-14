@@ -1,12 +1,12 @@
 package Organizm.Roslina;
-import Organizm.Organizm;
+import Organizm.*;
 
-public class Roslina extends Organizm {
+public abstract class Roslina extends Organizm {
 
     Roslina()
     {
-        setInicjatywa(0);
-        setSila(0);
+        setInicjatywa__(0); // wszystkie rosliny maja inicjatywe = 0
+        setSila__(0);  // wiekszosc roslin w tabelce ma 0
     }
     @Override
     public void akcja() {
@@ -14,12 +14,15 @@ public class Roslina extends Organizm {
     }
 
     @Override
-    public void kolizja() {
+    public void kolizja(Organizm organizm) {
 
     }
 
     @Override
-    public void rysowanie() {
+    public abstract void rysowanie();
 
+    @Override
+    public boolean reakcja(Organizm przeciwnik) {
+        return false;
     }
 }

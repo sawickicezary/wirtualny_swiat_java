@@ -6,4 +6,9 @@ public class Mlecz extends Roslina{
         super.akcja();
     }
 
+    @Override
+    public void rysowanie() {
+        System.out.print('2');
+    }
+
 }

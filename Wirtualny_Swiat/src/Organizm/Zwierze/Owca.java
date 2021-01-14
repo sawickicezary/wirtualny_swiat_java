@@ -5,10 +5,15 @@ import Swiat.Swiat;
 public class Owca extends Zwierze {
     public Owca(Swiat swiat, int x, int y)
     {
-        this.setSila(4);
-        this.setInicjatywa(4);
-        this.setX(x);
-        this.setY(y);
-        this.setSwiat(swiat);
+        this.setSila__(4);
+        this.setInicjatywa__(4);
+        this.setX__(x);
+        this.setY__(y);
+        this.setSwiat__(swiat);
+    }
+
+    @Override
+    public void rysowanie() {
+        System.out.print('#');
     }
 }
