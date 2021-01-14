@@ -25,7 +25,7 @@ public abstract class Organizm {
 
 
 
-    protected Swiat getSwiat__() {
+    public Swiat getSwiat__() {
         return swiat__;
     }
 

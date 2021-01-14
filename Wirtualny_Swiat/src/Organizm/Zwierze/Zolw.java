@@ -19,8 +19,8 @@ public class Zolw extends Zwierze {
     }
 
     @Override
-    protected Zwierze rozmnazanie(int x, int y) {
-        return null;
+    protected Zwierze rozmnazanie(Organizm rodzic, int x, int y) {
+        return new Zolw(rodzic.getSwiat__(), x,y );
     }
 
     @Override

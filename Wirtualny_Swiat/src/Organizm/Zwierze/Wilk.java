@@ -1,5 +1,6 @@
 package Organizm.Zwierze;
 
+import Organizm.Organizm;
 import Swiat.Swiat;
 
 public class Wilk extends Zwierze {
@@ -13,7 +14,7 @@ public class Wilk extends Zwierze {
     }
 
     @Override
-    protected Zwierze rozmnazanie(int x, int y) {
+    protected Zwierze rozmnazanie(Organizm rodzic, int x, int y) {
         return null;
     }
 

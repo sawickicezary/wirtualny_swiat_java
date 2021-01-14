@@ -13,21 +13,20 @@ public class Swiat {
     private int wysokosc__;
     List<Organizm> organizmy = new ArrayList<>();
     Swiat(int szerokosc, int wysokosc){
-        this.szerokosc__ = szerokosc;
-        this.wysokosc__ = wysokosc;
+        this.szerokosc__ = szerokosc - 1;
+        this.wysokosc__ = wysokosc - 1;
     }
     private void sortujOrganizmy(){
         organizmy.sort(new SortujPoInicjatywie());
     }
-    private void dodajOrganizm(Organizm organizm) throws Exception {
+    public void dodajOrganizm(Organizm organizm) throws Exception {
         int tempX = organizm.getX__();
         int tempY = organizm.getY__();
         if (tempX >=0 && tempX <= getSzerokosc() && tempY >= 0 && tempY <= getWysokosc()) {
             organizmy.add(organizm);
             return;
         }
-        throw new Exception("Organizm poza swiatem");
-    }
+        throw new Exception("Organizm poza swiatem"); }
 
     public int getSzerokosc() {
         return szerokosc__;
@@ -39,25 +38,30 @@ public class Swiat {
 
     public void wykonajTure(){
         sortujOrganizmy();
-        for (Organizm organizm:
-             organizmy) {
-            organizm.akcja();
-            organizm.zwiekszWiek();
+        for (int i = 0; i<organizmy.size(); i++)
+        {
+            organizmy.get(i).akcja();
+            organizmy.get(i).zwiekszWiek();
         }
+//        for (Organizm organizm:
+//             organizmy) {
+//            organizm.akcja();
+//            organizm.zwiekszWiek();
+//        }
     }
     public void rysujSwiat(){
         boolean znalezionoOrganizm = false;
         for (int i = 0; i < getWysokosc(); i++){
-            for (int j = 0; j<getSzerokosc(); j++){
+            for (int j = 0; j < getSzerokosc(); j++){
                 for (Organizm organizm: organizmy) {
-                    if (organizm.getX__() == j+1 && organizm.getY__() == i+1) {
+                    if (organizm.getX__() == j && organizm.getY__() == i) {
                         organizm.rysowanie();
                         znalezionoOrganizm = true;
                         break;
                     }
                 }
                 if (!znalezionoOrganizm)
-                    System.out.print('P');
+                    System.out.print('_');
                 znalezionoOrganizm = false;
             }
             System.out.print('\n');
@@ -84,12 +88,12 @@ public class Swiat {
         }
     }
     public static void main(String[] args) {
-        Swiat swiat = new Swiat(10,10);
+        Swiat swiat = new Swiat(100,100);
         try {
             swiat.dodajOrganizm((new Zolw(swiat, 1,1)));
             swiat.dodajOrganizm((new Owca(swiat, 4,1)));
-            swiat.dodajOrganizm((new Wilk(swiat, 5,7)));
-            swiat.dodajOrganizm((new Komar(swiat, 2,1)));
+            swiat.dodajOrganizm((new Owca(swiat, 5,7)));
+            swiat.dodajOrganizm((new Zolw(swiat, 2,1)));
             //swiat.dodajOrganizm((new Zolw(swiat, -1,1)));
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -98,11 +102,15 @@ public class Swiat {
         Scanner scan = new Scanner(System.in);
         swiat.rysujSwiat();
         System.out.print('\n');
+        int i = 1;
         while (true) {
             swiat.wykonajTure();
             swiat.rysujSwiat();
             swiat.usunMartweOrganizmy();
-            System.out.print('\n');
+            System.out.println();
+            System.out.println(i);
+            System.out.println();
+            i++;
             //scan.nextLine();
         }
     }
