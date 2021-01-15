@@ -72,7 +72,8 @@ abstract class Zwierze extends Organizm {
 
     @Override
     public void kolizja(Organizm organizm) {
-
+        int x = organizm.getX__();
+        int y = organizm.getY__();
         if (organizm.getClass() == this.getClass()){
             int losowyWybor;
             losowyWybor = (int) Math.random() * 4;
@@ -144,14 +145,21 @@ abstract class Zwierze extends Organizm {
 //            getSwiat__().dodaj
         }
         else if (organizm.reakcja(this)) {
-            if (getSila__() >= organizm.getSila__()) {
-                this.setX__(organizm.getX__());
-                this.setY__(organizm.getY__());
-                organizm.setZyje__(false);
-                return;
+            if (getSwiat__().coStoi(x,y) != null) { // Weryfikacja czy organizm nadal stoi na polu po reakcji
+                if (getSila__() >= organizm.getSila__()) {
+                    this.setX__(x);
+                    this.setY__(y);
+                    organizm.setZyje__(false);
+                    return;
+                }
+                this.setZyje__(false);
             }
-            this.setZyje__(false);
+            else {
+                this.setX__(x);
+                this.setY__(y);
+            }
         }
+
     }
 
     @Override

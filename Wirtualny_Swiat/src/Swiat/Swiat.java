@@ -88,12 +88,12 @@ public class Swiat {
         }
     }
     public static void main(String[] args) {
-        Swiat swiat = new Swiat(100,100);
+        Swiat swiat = new Swiat(10,10);
         try {
-            swiat.dodajOrganizm((new Zolw(swiat, 1,1)));
+            swiat.dodajOrganizm((new Komar(swiat, 1,1)));
             swiat.dodajOrganizm((new Owca(swiat, 4,1)));
             swiat.dodajOrganizm((new Owca(swiat, 5,7)));
-            swiat.dodajOrganizm((new Zolw(swiat, 2,1)));
+            swiat.dodajOrganizm((new Komar(swiat, 2,1)));
             //swiat.dodajOrganizm((new Zolw(swiat, -1,1)));
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -105,8 +105,8 @@ public class Swiat {
         int i = 1;
         while (true) {
             swiat.wykonajTure();
-            swiat.rysujSwiat();
             swiat.usunMartweOrganizmy();
+            swiat.rysujSwiat();
             System.out.println();
             System.out.println(i);
             System.out.println();
