@@ -3,6 +3,9 @@ package Organizm.Zwierze;
 import Organizm.Organizm;
 import Swiat.Swiat;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class Owca extends Zwierze {
     public Owca(Swiat swiat, int x, int y)
     {
@@ -19,7 +22,9 @@ public class Owca extends Zwierze {
     }
 
     @Override
-    public void rysowanie() {
-        System.out.print('#');
+    public JButton rysowanie() {
+        JButton temp = new JButton("Owca");
+        temp.setBackground(Color.lightGray);
+        return temp;
     }
 }

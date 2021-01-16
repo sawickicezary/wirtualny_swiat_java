@@ -3,6 +3,9 @@ package Organizm.Roslina;
 import Organizm.Organizm;
 import Swiat.Swiat;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class Ciern extends Roslina {
 
     public Ciern(Swiat swiat, int x, int y) {
@@ -23,8 +26,10 @@ public class Ciern extends Roslina {
     }
 
     @Override
-    public void rysowanie() {
-        System.out.print('3');
+    public JButton rysowanie() {
+        JButton temp = new JButton("Ciern");
+        temp.setBackground(new Color(153,102,0));
+        return temp;
     }
 
     @Override

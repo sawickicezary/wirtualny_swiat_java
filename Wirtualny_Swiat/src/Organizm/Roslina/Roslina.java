@@ -1,6 +1,7 @@
 package Organizm.Roslina;
 import Organizm.*;
 
+import javax.swing.*;
 import java.security.interfaces.RSAKey;
 
 public abstract class Roslina extends Organizm {
@@ -59,5 +60,5 @@ public abstract class Roslina extends Organizm {
 
 
     @Override
-    public abstract void rysowanie();
+    public abstract JButton rysowanie();
 }

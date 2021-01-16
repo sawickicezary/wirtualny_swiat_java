@@ -3,6 +3,9 @@ package Organizm.Zwierze;
 import Organizm.Organizm;
 import Swiat.Swiat;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class Wilk extends Zwierze {
     public Wilk(Swiat swiat, int x, int y)
     {
@@ -15,11 +18,13 @@ public class Wilk extends Zwierze {
 
     @Override
     protected Zwierze rozmnazanie(Organizm rodzic, int x, int y) {
-        return null;
+        return new Wilk(rodzic.getSwiat__(), x, y);
     }
 
     @Override
-    public void rysowanie() {
-        System.out.print('@');
+    public JButton rysowanie() {
+        JButton temp = new JButton("Wilk");
+        temp.setBackground(Color.darkGray);
+        return temp;
     }
 }

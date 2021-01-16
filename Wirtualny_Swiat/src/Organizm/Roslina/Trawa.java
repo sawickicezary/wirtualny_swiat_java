@@ -3,6 +3,9 @@ package Organizm.Roslina;
 import Organizm.Organizm;
 import Swiat.Swiat;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class Trawa extends Roslina{
 
     public Trawa(Swiat swiat, int x, int y){
@@ -21,12 +24,13 @@ public class Trawa extends Roslina{
                 e.getStackTrace();
             }
         }
-        return;
     }
 
     @Override
-    public void rysowanie() {
-        System.out.print('1');
+    public JButton rysowanie() {
+        JButton temp = new JButton("Trawa");
+        temp.setBackground(Color.GREEN);
+        return temp;
     }
 
     @Override

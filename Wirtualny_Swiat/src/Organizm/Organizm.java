@@ -2,6 +2,8 @@ package Organizm;
 
 import Swiat.Swiat;
 
+import javax.swing.*;
+
 public abstract class Organizm {
     private int sila__;
     private int inicjatywa__;
@@ -17,11 +19,11 @@ public abstract class Organizm {
     }
     public abstract void akcja(); // określa zachowanie organizmu w trakcie tury
 
-    public abstract void rysowanie(); // powduje narysowanie symbolicznej reprezentacji orgnizmu
+    public abstract JButton rysowanie(); // powduje narysowanie symbolicznej reprezentacji orgnizmu
 
     public abstract boolean reakcja(Organizm przeciwnik); // reakcja organizmu na atak
 
-    public void kolizja(Organizm organizm) {}; // określa zachowanie organizmu w trakcie kontaktu/zderzenia z innym organizmem
+    public void kolizja(Organizm organizm) {} // określa zachowanie organizmu w trakcie kontaktu/zderzenia z innym organizmem
 
 
 

@@ -1,6 +1,7 @@
 package Swiat;
 
 import Organizm.Organizm;
+import Organizm.Roslina.Ciern;
 import Organizm.Roslina.Mlecz;
 import Organizm.Roslina.Trawa;
 import Organizm.Zwierze.Komar;
@@ -40,7 +41,8 @@ public class Swiat {
 
     public void wykonajTure(){
         sortujOrganizmy();
-        for (int i = 0; i<organizmy.size(); i++)
+        int obecneOrganizmy = organizmy.size();
+        for (int i = 0; i<obecneOrganizmy; i++)
         {
             organizmy.get(i).akcja();
             organizmy.get(i).zwiekszWiek();
@@ -51,6 +53,11 @@ public class Swiat {
 //            organizm.zwiekszWiek();
 //        }
     }
+
+    public List<Organizm> getOrganizmy() {
+        return organizmy;
+    }
+
     public void rysujSwiat(){
         boolean znalezionoOrganizm = false;
         for (int i = 0; i < getWysokosc(); i++){
@@ -69,7 +76,7 @@ public class Swiat {
             System.out.print('\n');
         }
     }
-    private void usunMartweOrganizmy(){
+    public void usunMartweOrganizmy(){
         organizmy.removeIf(organizm -> !organizm.getZyje__());
     }
     public Organizm coStoi(int x, int y){
@@ -83,37 +90,36 @@ public class Swiat {
     }
     public class SortujPoInicjatywie implements Comparator<Organizm> {
         public int compare(Organizm o1, Organizm o2) {
-
             if (o1.getInicjatywa__() == o2.getInicjatywa__())
                 return o2.getWiek__() - o1.getWiek__();
             return o2.getInicjatywa__() - o1.getInicjatywa__();
         }
     }
-    public static void main(String[] args) {
-        Swiat swiat = new Swiat(10,10);
-        try {
-            swiat.dodajOrganizm((new Trawa(swiat, 1,1)));
-//            swiat.dodajOrganizm((new Owca(swiat, 4,1)));
-//            swiat.dodajOrganizm((new Owca(swiat, 5,7)));
-//            swiat.dodajOrganizm((new Komar(swiat, 2,1)));
-            //swiat.dodajOrganizm((new Zolw(swiat, -1,1)));
-        } catch (Exception exception) {
-            exception.printStackTrace();
-            System.exit(-1);
-        }
-        Scanner scan = new Scanner(System.in);
-        swiat.rysujSwiat();
-        System.out.print('\n');
-        int i = 1;
-        while (true) {
-            swiat.wykonajTure();
-            swiat.usunMartweOrganizmy();
-            swiat.rysujSwiat();
-            System.out.println();
-            System.out.println(i);
-            System.out.println();
-            i++;
+//    public static void main(String[] args) {
+//        Swiat swiat = new Swiat(10,10);
+//        try {
+//            swiat.dodajOrganizm((new Trawa(swiat, 1,1)));
+//            swiat.dodajOrganizm((new Mlecz(swiat, 4,1)));
+//            swiat.dodajOrganizm((new Ciern(swiat, 5,7)));
+////            swiat.dodajOrganizm((new Komar(swiat, 2,1)));
+//            //swiat.dodajOrganizm((new Zolw(swiat, -1,1)));
+//        } catch (Exception exception) {
+//            exception.printStackTrace();
+//            System.exit(-1);
+//        }
+//        Scanner scan = new Scanner(System.in);
+//        swiat.rysujSwiat();
+//        System.out.print('\n');
+//        int i = 1;
+//        while (true) {
+//            swiat.wykonajTure();
+//            swiat.usunMartweOrganizmy();
+//            swiat.rysujSwiat();
+//            System.out.println();
+//            System.out.println(i);
+//            System.out.println();
+//            i++;
             //scan.nextLine();
-        }
-    }
+//        }
+//    }
 }

@@ -3,6 +3,9 @@ package Organizm.Roslina;
 import Organizm.Organizm;
 import Swiat.Swiat;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class Mlecz extends Roslina{
     @Override
     protected void rozprzestrzenianie(Roslina rodzic, int x, int y) {
@@ -27,8 +30,10 @@ public class Mlecz extends Roslina{
         }
 
     @Override
-    public void rysowanie() {
-        System.out.print('2');
+    public JButton rysowanie() {
+        JButton temp = new JButton("Mlecz");
+        temp.setBackground(Color.YELLOW);
+        return temp;
     }
 
     @Override

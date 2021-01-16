@@ -1,6 +1,8 @@
 package Organizm.Zwierze;
 import Organizm.Organizm;
 
+import javax.swing.*;
+
 abstract class Zwierze extends Organizm {
 
     protected abstract Zwierze rozmnazanie(Organizm rodzic, int x, int y);
@@ -163,7 +165,7 @@ abstract class Zwierze extends Organizm {
     }
 
     @Override
-    public abstract void rysowanie();
+    public abstract JButton rysowanie();
 
 }
 

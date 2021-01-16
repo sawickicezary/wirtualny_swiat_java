@@ -3,14 +3,17 @@ package Organizm.Zwierze;
 import Organizm.Organizm;
 import Swiat.Swiat;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class Komar extends Zwierze {
     private int poprzedniX__;
     private int poprzedniY__;
 
     public Komar(Swiat swiat, int x, int y)
     {
-        int poprzedniX = x;
-        int poprzedniY = y;
+        this.poprzedniX__ = x;
+        this.poprzedniY__ = y;
         this.setSila__(1);
         this.setInicjatywa__(1);
         this.setX__(x);
@@ -33,8 +36,11 @@ public class Komar extends Zwierze {
     }
 
     @Override
-    public void rysowanie() {
-        System.out.print('$');
+    public JButton rysowanie() {
+        JButton temp = new JButton("Komar");
+        temp.setBackground(Color.BLACK);
+        temp.setForeground(Color.WHITE);
+        return temp;
     }
 
     @Override
