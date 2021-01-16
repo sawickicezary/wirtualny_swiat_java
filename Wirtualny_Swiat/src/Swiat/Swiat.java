@@ -1,6 +1,8 @@
 package Swiat;
 
 import Organizm.Organizm;
+import Organizm.Roslina.Mlecz;
+import Organizm.Roslina.Trawa;
 import Organizm.Zwierze.Komar;
 import Organizm.Zwierze.Owca;
 import Organizm.Zwierze.Wilk;
@@ -90,10 +92,10 @@ public class Swiat {
     public static void main(String[] args) {
         Swiat swiat = new Swiat(10,10);
         try {
-            swiat.dodajOrganizm((new Komar(swiat, 1,1)));
-            swiat.dodajOrganizm((new Owca(swiat, 4,1)));
-            swiat.dodajOrganizm((new Owca(swiat, 5,7)));
-            swiat.dodajOrganizm((new Komar(swiat, 2,1)));
+            swiat.dodajOrganizm((new Trawa(swiat, 1,1)));
+//            swiat.dodajOrganizm((new Owca(swiat, 4,1)));
+//            swiat.dodajOrganizm((new Owca(swiat, 5,7)));
+//            swiat.dodajOrganizm((new Komar(swiat, 2,1)));
             //swiat.dodajOrganizm((new Zolw(swiat, -1,1)));
         } catch (Exception exception) {
             exception.printStackTrace();

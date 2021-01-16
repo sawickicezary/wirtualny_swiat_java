@@ -76,7 +76,7 @@ abstract class Zwierze extends Organizm {
         int y = organizm.getY__();
         if (organizm.getClass() == this.getClass()){
             int losowyWybor;
-            losowyWybor = (int) Math.random() * 4;
+            losowyWybor = (int) (Math.random() * 4);
             Organizm organizmNaPolu;
             int wspolrzedna;
             switch (losowyWybor){

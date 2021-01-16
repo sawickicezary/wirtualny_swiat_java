@@ -17,11 +17,11 @@ public abstract class Organizm {
     }
     public abstract void akcja(); // określa zachowanie organizmu w trakcie tury
 
-    public abstract void kolizja(Organizm organizm); // określa zachowanie organizmu w trakcie kontaktu/zderzenia z innym organizmem
-
     public abstract void rysowanie(); // powduje narysowanie symbolicznej reprezentacji orgnizmu
 
     public abstract boolean reakcja(Organizm przeciwnik); // reakcja organizmu na atak
+
+    public void kolizja(Organizm organizm) {}; // określa zachowanie organizmu w trakcie kontaktu/zderzenia z innym organizmem
 
 
 
